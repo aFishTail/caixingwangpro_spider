@@ -34,16 +34,16 @@ def login(driver, verification_code):
         ele_verification_input.send_keys(verification_code)
         login_button = driver.find_element_by_xpath('//*[@id="outer"]/div/div[2]/form/div/div[2]/div/p/a[1]')
         login_button.click()
-        sleep(1)
-
         try:
-            driver.find_element_by_xpath('//*[@id="outer"]/div/div[2]/form/div/div[1]/div[2]').is_displayed()
+            WebDriverWait(driver,10).until(EC.visibility_of((By.XPATH, '//*[@id="outer"]/div/div[2]/form/div/div[1]/div[2]')))
         except:
             print('验证码登录失败，重新识别进行登录')
+            sleep(2)
             verify(driver)
         else:
             sleep(1)
             print('登录成功')
+            print(driver.page_source)
 
 
 
