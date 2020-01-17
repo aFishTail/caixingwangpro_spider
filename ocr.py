@@ -5,17 +5,6 @@ APP_ID = '18299361'
 API_KEY = '9hEv8TpZgVncF2URmE2qkASg'
 SECRET_KEY = '3CcfWFZ8HhToGT94lFUcwZr5TlewG02s'
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
-# with open('./验证码.png', 'rb') as fp:
-#     yanzhengma = fp.read()
-#使用client.basicAccurate()或者client.basicGeneral()方法自动识别验证码
-
-# def orc_web_image(url='http://img3.imgtn.bdimg.com/it/u=2850513251,2604811214&fm=26&gp=0.jpg'):
-# # img_url='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1750534261,2823217499&fm=26&gp=0.jpg'
-#     if url:
-#         print(url)
-#         res = client.webImageUrl(url)
-#         print(res)
-#         return res
 
 def ocr_image():
     with open('./code.png', 'rb') as fp:
